@@ -8,7 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="sig_datos_empleados")
@@ -24,6 +27,10 @@ public class DatosEmpleado implements Serializable {
 @Column(name="datemp_c_i", nullable=false)
 private Long tempCi;
 
+@NotNull
+@ManyToOne
+@JoinColumn(name=" log_usuario")
+private Login login;
 
 
 @Column(name="datemp_nombre")
@@ -69,6 +76,20 @@ public Long getTempCi() {
  */
 public void setTempCi(Long tempCi) {
 	this.tempCi = tempCi;
+}
+
+/**
+ * @return the login
+ */
+public Login getLogin() {
+	return login;
+}
+
+/**
+ * @param login the login to set
+ */
+public void setLogin(Login login) {
+	this.login = login;
 }
 
 /**
@@ -216,10 +237,11 @@ public void setFechaModificacion(Timestamp fechaModificacion) {
  */
 @Override
 public String toString() {
-	return "DatosEmpleado [tempCi=" + tempCi + ", datempNombre=" + datempNombre + ", dateCargo=" + dateCargo
-			+ ", ordenCostos=" + ordenCostos + ", datempResponsable=" + datempResponsable + ", fechaHoraIni="
-			+ fechaHoraIni + ", fechaHoraFin=" + fechaHoraFin + ", correo=" + correo + ", creacion=" + creacion
-			+ ", modificar=" + modificar + ", fechaModificacion=" + fechaModificacion + "]";
+	return "DatosEmpleado [tempCi=" + tempCi + ", login=" + login + ", datempNombre=" + datempNombre + ", dateCargo="
+			+ dateCargo + ", ordenCostos=" + ordenCostos + ", datempResponsable=" + datempResponsable
+			+ ", fechaHoraIni=" + fechaHoraIni + ", fechaHoraFin=" + fechaHoraFin + ", correo=" + correo + ", creacion="
+			+ creacion + ", modificar=" + modificar + ", fechaModificacion=" + fechaModificacion + "]";
 }
+
 
 }

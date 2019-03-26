@@ -19,11 +19,13 @@ import javax.validation.constraints.NotNull;
 @Table(name="sig_historial_empleado")
 public class HistorialEmpleado implements Serializable {
 
-	/**
+	
+
+
+/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1234564584710838458L;
-
+	private static final long serialVersionUID = 8749383183007601847L;
 
 @Id
 @GeneratedValue(strategy= GenerationType.IDENTITY) 
