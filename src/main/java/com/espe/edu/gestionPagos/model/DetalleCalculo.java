@@ -95,7 +95,7 @@ public class DetalleCalculo implements Serializable {
 		return "DetalleCalculo [numDet=" + numDet + ", ordenGastos=" + ordenGastos + ", detcalValor=" + detcalValor
 				+ "]";
 	}
-	
-	
 
+
+	
 }
